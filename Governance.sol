@@ -1,8 +1,4 @@
 // SPDX-License-Identifier: MIT
-
-// This code sets up a governance system, with a defined set and flow of the proposal and voting proceess in alignment to the rules, 
-// processes, and mechanisms by which decisions are made within our DAO (captchaDAO). 
-
 pragma solidity ^0.8.0;
 
 import "./DAOToken.sol";
@@ -14,7 +10,6 @@ contract Governance {
     using SafeMath for uint256;
 
     DAOToken public daoToken;
-    // Define key elements to the Proposal structure —specific to each proposal
 
     struct Proposal {
         uint256 id;
@@ -30,13 +25,9 @@ contract Governance {
         EnumerableSet.AddressSet voters;
         bool executed;
     }
-   
-    // Create an array of proposals containing the elements above. 
-    // *This is accessible via a helper function below*
+
     Proposal[] proposals; // Changed to private
 
-
-    // Linearly listed events inputting voter and proposer information
     event NewProposal(uint256 indexed proposalId, address indexed proposer, string description, uint256 amount);
     event VoteCasted(uint256 indexed proposalId, address indexed voter, bool support, uint256 weight);
     event ProposalExecuted(uint256 indexed proposalId, address indexed proposer, bool successful, uint256 totalVotesFor, uint256 totalVotesAgainst);
@@ -47,7 +38,6 @@ contract Governance {
         daoToken = _daoToken;
     }
 
-    // create a proposal with the information of the prososal and the timelines of the proposal process
     function createProposal(string memory description, uint256 amount, address payable recipient) public {
         uint256 proposalId = proposals.length;
         Proposal storage proposal = proposals.push();
@@ -61,7 +51,6 @@ contract Governance {
         emit NewProposal(proposalId, msg.sender, description, amount);
     }
 
-    // voting function
     function vote(uint256 proposalId, uint256 amount, bool support) public {
         require(block.timestamp <= proposals[proposalId].endTime, "Voting period has ended");
         require(daoToken.balanceOf(msg.sender) >= amount, "Not enough tokens");
@@ -81,7 +70,6 @@ contract Governance {
         emit VoteCasted(proposalId, msg.sender, support, voteWeight);
     }
 
-// proposal execution
     function executeProposal(uint256 proposalId) public {
         Proposal storage proposal = proposals[proposalId];
         require(!proposal.executed, "Proposal already executed");
@@ -107,17 +95,15 @@ contract Governance {
         return proposals[proposalId].votes[voter];
     }
 
-    // Calculates the square root of a given unsigned integer 
-    // Babylonian method to approximate the square root of the input integer y. 
-    // It recursively refines the approximation until it converges to a certain precision 
-    // To calculate vote weights based on token amounts.
     function sqrt(uint y) internal pure returns (uint z) {
         if (y > 3) {
             z = y;
             uint x = y / 2 + 1;
             while (x < z) {
                 z = x;
-                x = (y / x + x) / 2;
+                x = (y / x + x) /
+
+ 2;
             }
         } else if (y != 0) {
             z = 1;

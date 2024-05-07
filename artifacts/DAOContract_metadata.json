@@ -206,11 +206,11 @@
 			]
 		},
 		"ECE473 Final Project/Governance.sol": {
-			"keccak256": "0xef4c1d544f4a2dc20b894821c3ceb0421a7fbcafe87af3e03d3213bc5f469c2b",
+			"keccak256": "0xa7eb8b7932c76bdc11605fb53e13707723a463b7569f4703e1d8db3b9f021caa",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6235e60d5d5d8bc6a13cf8ed59f34a89c7152c409da1891b6ab060206f2f3ead",
-				"dweb:/ipfs/QmYd4SQLhyzQ2KXJb75bPXDojRfpYD9STDPuE9dPqyynkQ"
+				"bzz-raw://68a933e2976b8b375cd0051fecce50bd1b071d332e5bf9823bdfe528c8e3771d",
+				"dweb:/ipfs/QmcXfjCFczcNKDdCH11g7cjpxbTYsL9n2bJjSzDAayVwNH"
 			]
 		}
 	},
