@@ -1,3 +1,7 @@
+// Unit testing for solidity smart contract writing code. Create and vote on proposals. Ensure that users without sufficient 
+// tokens are unable to create/execute a proposal. Verify delegation eligibility. Check time-lock enforcement. Handle dispute resolutions
+// Prevent double voting. Assure that users can withdraw properly 
+
 const { assert } = require("chai");
 const { expectRevert, time } = require("@openzeppelin/test-helpers");
 
