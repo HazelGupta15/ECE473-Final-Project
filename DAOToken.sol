@@ -1,4 +1,7 @@
 // SPDX-License-Identifier: MIT
+// CAPTCHA ERC20 token to represent voting power in our DAO. Implemented lock and unlock functions for CCUS storage facilities 
+// to bring to market or lock available credits
+
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
