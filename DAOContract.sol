@@ -1,4 +1,9 @@
 // SPDX-License-Identifier: MIT
+// The DAO token contract imported and stored as a variable
+// Proposal struct defined with variables (e.g. proposal id, proposer, description, amount, recipient, and voting details)
+// Array stores all proposals, while mapping only keeps track of active proposals
+// Functions handling proposal creation, voting, and execution
+
 pragma solidity ^0.8.0;
 
 // Importing the required contracts
