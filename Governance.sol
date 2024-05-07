@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: MIT
+// Proposal structure implementation of our DAO
+// For quadratic voting implementation, we have used the Babylonian method for calculating square root as it is efficient.
 pragma solidity ^0.8.0;
 
 import "./DAOToken.sol";
