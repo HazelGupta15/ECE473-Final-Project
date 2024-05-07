@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
-// Implemented lock and unlock functions for CCUS storage facilities to bring to market or lock available credits
+// Constructor and functions callable by DAO token Contract. Administrative functions for captchaDAO. 
+// Implemented lock and unlock functions for CCUS storage facilities to bring to market or lock available credits.
 pragma solidity ^0.8.0;
 
 import "./DAOToken.sol";
