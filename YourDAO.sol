@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: MIT
+// captchaDAO implementation
+
 pragma solidity ^0.8.11;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
