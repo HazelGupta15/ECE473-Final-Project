@@ -1,4 +1,9 @@
 // SPDX-License-Identifier: MIT
+
+// This code introduces a custom role `CCUS_ROLE` for a specific company, allowing it to lock and unlock tokens
+// owned by token holders, ensuring controlled token transfers according to specified permissions.
+// Functions that  grant and revoke the `CCUS_ROLE` role, enhancing flexibility in token management, are also provided.
+
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -12,8 +17,8 @@ contract DAOToken is ERC20, AccessControl {
     bytes32 public constant CCUS_ROLE = keccak256("CCUS_ROLE");
     mapping(address => uint256) private _lockedTokens;
 
-    constructor(string memory name, string memory symbol, uint256 initialSupply)
-        ERC20(name, symbol) {
+    constructor(string memory name, string memory sign, uint256 initialSupply)
+        ERC20(name, sign) {
         _mint(msg.sender, initialSupply);
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
