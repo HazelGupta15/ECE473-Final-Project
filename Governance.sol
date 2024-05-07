@@ -14,7 +14,7 @@ contract Governance {
     using SafeMath for uint256;
 
     DAOToken public daoToken;
-// Define key elements to the Proposal structure —specific to each proposal
+    // Define key elements to the Proposal structure —specific to each proposal
 
     struct Proposal {
         uint256 id;
@@ -47,7 +47,7 @@ contract Governance {
         daoToken = _daoToken;
     }
 
- // create a proposal with the information of the prososal and the timelines of the proposal process
+    // create a proposal with the information of the prososal and the timelines of the proposal process
     function createProposal(string memory description, uint256 amount, address payable recipient) public {
         uint256 proposalId = proposals.length;
         Proposal storage proposal = proposals.push();
